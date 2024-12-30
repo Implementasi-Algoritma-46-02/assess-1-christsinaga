@@ -28,14 +28,17 @@ public class Soal04 {
                 return;
         }
 
-        double honor = (jamKerja * HONOR_PER_JAM) + tunjangan;
+        double honorDasar = (jamKerja * HONOR_PER_JAM) + tunjangan;
 
+        double bonus = 0;
         if (jamKerja > 175) {
-            honor += (honor * 0.07);
+            bonus = honorDasar * 0.07;
         } else if (jamKerja > 160) {
-            honor += (honor * 0.05);
+            bonus = honorDasar * 0.05;
         }
 
-        System.out.printf("%.1f%n", honor);
+        double totalHonor = honorDasar + bonus;
+
+        System.out.printf("%.1f%n", totalHonor);
     }
 }
