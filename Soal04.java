@@ -4,16 +4,13 @@ public class Soal04 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Masukkan kode pekerjaan (DES, PRG, WRT, MKT): ");
-        String kodePekerjaan = scanner.nextLine();
-        System.out.print("Masukkan jumlah jam kerja: ");
-        int jumlahJam = scanner.nextInt();
+        System.out.print("Masukkan kode pekerjaan dan jumlah jam kerja: ");
+        String kodePekerjaan = scanner.next();
+        int jamKerja = scanner.nextInt();
 
-        double upahPerJam = 30000;
-        double honorDasar = jumlahJam * upahPerJam;
+        final double HONOR_PER_JAM = 30000;
+
         double tunjangan = 0;
-        double bonus = 0;
-
         switch (kodePekerjaan) {
             case "DES":
                 tunjangan = 600000;
@@ -25,20 +22,22 @@ public class Soal04 {
                 tunjangan = 400000;
                 break;
             case "MKT":
-                tunjangan = 1000000;
+                tunjangan = 0;
                 break;
             default:
-                System.out.println("Kode pekerjaan tidak valid");
+                System.out.println("Kode pekerjaan tidak valid.");
                 return;
         }
 
-        if (jumlahJam > 160) {
-            bonus = honorDasar * 0.05;
-        } else if (jumlahJam > 175) {
-            bonus = honorDasar * 0.07;
+        double honor = (jamKerja * HONOR_PER_JAM) + tunjangan;
+
+        if (jamKerja > 160) {
+            honor += (honor * 0.05);
+        }
+        if (jamKerja > 175) {
+            honor += (honor * 0.07);
         }
 
-        double totalHonor = honorDasar + tunjangan + bonus;
-        System.out.println("Total honor: Rp " + totalHonor);
+        System.out.printf("Jumlah honor karyawan dalam satu bulan: %.1f%n", honor);
     }
 }
