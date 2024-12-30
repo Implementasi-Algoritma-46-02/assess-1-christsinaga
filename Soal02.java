@@ -13,9 +13,9 @@ public class Soal02 {
         System.out.print("Apakah memiliki HKI (ya/tidak): ");
         String hki = scanner.next();
         System.out.print("Apakah juara lomba internasional (ya/tidak): ");
-        String lomba = scanner.next();
+        String juara = scanner.next();
 
-        boolean isCumlaude = masaStudi == 3 && ipk > 3.5 && eprt > 450 && (hki.equals("ya") || lomba.equals("ya"));
+        boolean isCumlaude = masaStudi <= 3 && ipk >= 3.5 && eprt > 450 && hki.equalsIgnoreCase("ya") && juara.equalsIgnoreCase("ya");
 
         if (isCumlaude) {
             System.out.println("Cumlaude");
