@@ -4,7 +4,6 @@ public class Soal04 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Masukkan kode pekerjaan dan jumlah jam kerja: ");
         String kodePekerjaan = scanner.next();
         int jamKerja = scanner.nextInt();
 
@@ -31,13 +30,12 @@ public class Soal04 {
 
         double honor = (jamKerja * HONOR_PER_JAM) + tunjangan;
 
-        if (jamKerja > 160) {
-            honor += (honor * 0.05);
-        }
         if (jamKerja > 175) {
             honor += (honor * 0.07);
+        } else if (jamKerja > 160) {
+            honor += (honor * 0.05);
         }
 
-        System.out.printf("Jumlah honor karyawan dalam satu bulan: %.1f%n", honor);
+        System.out.printf("%.1f%n", honor);
     }
 }
