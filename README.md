@@ -1,8 +1,8 @@
 ## Identitas
 
-Nama: 
+Nama: CHRIST JONATHAN FATRO SINAGA
 
-NIM : 
+NIM : 6706223144
 
 ## Instruksi
 
